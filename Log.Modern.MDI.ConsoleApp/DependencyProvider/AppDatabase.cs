@@ -1,11 +1,11 @@
-using Core;
-using Core.Lib;
+using EFCoreHelper;
 using Log.Data;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Log.Modern.MDI.ConsoleApp;
 
-public class AppDatabase : MDIDependencyProvider
+public class AppDatabase 
+    : DIHelper.MicrosoftDI.MDIDependencySet
 {
     public AppDatabase(
         IServiceCollection container) 
@@ -13,7 +13,7 @@ public class AppDatabase : MDIDependencyProvider
     {
     }
 
-    public override void RegisterDependencies()
+    public override void Register()
     {
         Container.AddSingleton<LogContext>();
 

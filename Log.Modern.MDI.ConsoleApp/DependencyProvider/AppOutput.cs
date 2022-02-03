@@ -5,7 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Log.Modern.MDI.ConsoleApp;
 
-public class AppOutput : CLI.Core.Lib.MDI.AppOutput
+public class AppOutput 
+    : DIHelper.MicrosoftDI.AppOutput
 {
     public AppOutput(
         IServiceCollection container) 

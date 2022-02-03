@@ -1,24 +1,25 @@
-using CLI.Core;
+using DIHelper;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Log.Modern.MDI.ConsoleApp;
 
-public class MDIDependencyCollection : CLI.Core.Lib.MDIDependencyCollection
+public class MDIDependencySuite
+    : DIHelper.MicrosoftDI.MDIDependencySuite
 {
-    public MDIDependencyCollection(
+    public MDIDependencySuite(
         IServiceCollection container) 
         : base(container) 
     {
     }
 
     protected override void RegisterDatabase()=> 
-        RegisterDependencyProvider<AppDatabase>();
+        RegisterSet<AppDatabase>();
 
     protected override void RegisterConsoleOutput() => 
-        RegisterDependencyProvider<AppOutput>();
+        RegisterSet<AppOutput>();
 
     protected override void RegisterCommands() => 
-        RegisterDependencyProvider<AppCommands>();
+        RegisterSet<AppCommands>();
 
     protected override void RegisterProgram() => 
         Container.AddSingleton<IAppProgram, AppProgram>();
