@@ -49,7 +49,7 @@
 	<ItemGroup> -->
 
 	<!--Debug refs-->
-	<ItemGroup>
+	<!-- <ItemGroup>
 		<Reference Include="ModelHelper">
 			<HintPath>..\..\model-helper\ModelHelper\bin\Debug\net6.0\ModelHelper.dll</HintPath>
 		</Reference>
@@ -92,10 +92,10 @@
 		<Reference Include="Log.Modern.Lib">
 			<HintPath>..\..\log-modern-lib\Log.Modern.Lib\bin\Debug\net6.0\Log.Modern.Lib.dll</HintPath>
 		</Reference>
-	</ItemGroup>
+	</ItemGroup> -->
 
 	<!-- Release References -->
-  	<!-- <ItemGroup>
+  	<ItemGroup>
 		<Reference Include="ModelHelper">
 			<HintPath>..\..\..\Build\model-helper\ModelHelper\ModelHelper.dll</HintPath>
 		</Reference>
@@ -138,5 +138,5 @@
 		<Reference Include="Log.Modern.Lib">
 			<HintPath>..\..\..\Build\log-modern-lib\Log.Modern.Lib\Log.Modern.Lib.dll</HintPath>
 		</Reference>
-  	</ItemGroup> -->
+  	</ItemGroup>
 </Project>
