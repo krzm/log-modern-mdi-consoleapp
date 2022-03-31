@@ -1,21 +1,24 @@
 using CommandDotNet;
 using CommandDotNet.Repl;
-using Microsoft.Extensions.DependencyInjection;
+using CommandDotNet.MDI.Helper;
+using Config.Wrapper;
+using Serilog;
 
 namespace Log.Modern.MDI.ConsoleApp;
 
 [Command()]
-public class AppProgram 
-    : CommandDotNet.Helper.AppProgramMDI<AppProgram>
+public class AppProg
+    : AppProgMDI<AppProg>
 {
 	private static bool inSession;
 
     [Subcommand()]
     public LogModelCommands? LogModel { get; set; }
     
-    public AppProgram(
-        IServiceCollection services) 
-            : base(services)
+    public AppProg(
+        ILogger log
+        , IConfigReader config) 
+            : base(log, config)
     {
     }
 
