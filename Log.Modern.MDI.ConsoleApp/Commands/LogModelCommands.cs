@@ -8,10 +8,10 @@ namespace Log.Modern.MDI.ConsoleApp;
 public class LogModelCommands
 {
     private const string DateFormat = "dd.MM.yyyy";
-    private readonly IReadCommand<LogArgFilter> logReadCommand;
+    private readonly IReadCommand<LogFilterArgs> logReadCommand;
 
     public LogModelCommands(
-        IReadCommand<LogArgFilter> logReadCommand)
+        IReadCommand<LogFilterArgs> logReadCommand)
     {
         this.logReadCommand = logReadCommand;
     }
@@ -24,6 +24,6 @@ public class LogModelCommands
         )]  
         DateTime? date)
     {
-        logReadCommand.Read(new LogArgFilter(){ Start = date });
+        logReadCommand.Read(new LogFilterArgs(){ Start = date });
     }
 }

@@ -15,6 +15,6 @@ public class AppCommands
 
     public override void Register()
     {
-        Container.AddSingleton<IReadCommand<LogArgFilter>, LogReadCommand>();
+        Container.AddSingleton<IReadCommand<LogFilterArgs>, LogReadCommand>();
     }
 }

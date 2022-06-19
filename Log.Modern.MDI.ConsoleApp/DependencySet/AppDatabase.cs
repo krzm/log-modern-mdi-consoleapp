@@ -1,4 +1,4 @@
-using EFCoreHelper;
+using EFCore.Helper;
 using Log.Data;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,9 +17,9 @@ public class AppDatabase
     {
         Container.AddSingleton<LogContext>();
 
-        Container.AddSingleton<IGenericRepository<Category>, EFGenericRepository<Category, LogContext>>();
-        Container.AddSingleton<IGenericRepository<Place>, EFGenericRepository<Place, LogContext>>();
-        Container.AddSingleton<IGenericRepository<Data.Task>, EFGenericRepository<Data.Task, LogContext>>();
+        Container.AddSingleton<IRepository<Category>, EFRepository<Category, LogContext>>();
+        Container.AddSingleton<IRepository<Place>, EFRepository<Place, LogContext>>();
+        Container.AddSingleton<IRepository<Data.Task>, EFRepository<Data.Task, LogContext>>();
         Container.AddSingleton<ILogRepo, LogRepo>();
 
         Container.AddSingleton<ILogUnitOfWork, LogUnitOfWork>();

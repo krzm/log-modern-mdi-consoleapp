@@ -5,4 +5,5 @@ using Microsoft.Extensions.DependencyInjection;
 IBootstraper booter = new Bootstraper(
 	new MDIDependencySuite(
 		new ServiceCollection()));
-booter.Boot(args);
+booter.CreateApp();
+booter.RunApp(args);
